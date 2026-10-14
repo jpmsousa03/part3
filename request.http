@@ -1,11 +1,11 @@
-GET http://localhost:3001/api/persons/
+GET http://localhost:3001/api/persons/122
 
 ###
-POST http://localhost:3001/api/persons/ HTTP/1.1
+POST  http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
 
 {
     "name": "denise",
-    "number":9,
+    "number":13,
     "time": "Wed, 21 Oct 2015 18:27:50 GMT"
 }

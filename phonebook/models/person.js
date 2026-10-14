@@ -1,19 +1,19 @@
-const mongoose = require("mongoose");
-require ("dotenv").config();
+const mongoose = require('mongoose')
+require ('dotenv').config()
 
-const url = process.env.MONGODB_URI;
+const url = process.env.MONGODB_URI
 
-mongoose.set("strictQuery", false);
+mongoose.set('strictQuery', false)
 
-mongoose.connect(url, { family: 4 });
+mongoose.connect(url, { family: 4 })
 
 const personSchema = new mongoose.Schema({
-    name: {
+  name: {
     type: String,
     minLength: 3,
     required: true
   },
-    number: {
+  number: {
     type: String,
     required: true,
     validate: {
@@ -23,6 +23,6 @@ const personSchema = new mongoose.Schema({
       message: props => `${props.value} is not a valid phone number`
     }
   },
-});
+})
 
-module.exports = mongoose.model("Person", personSchema);
+module.exports = mongoose.model('Person', personSchema)
